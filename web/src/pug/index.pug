@@ -1,0 +1,19 @@
+doctype html
+html
+  include @/@loadingio/bootstrap.ext/index.pug
+  include @/ldview/index.pug
+  head
+    +css([
+      {name: "bootstrap", path: "dist/css/bootstrap.min.css"},
+      {name: "@loadingio/bootstrap.ext"}
+    ])
+  body
+    .w-1024.rwd.mx-auto.my-4
+      .btn.btn-primary(ld="btn") Hello
+
+    +script([
+      {name: "@loadingio/ldquery"},
+      {name: "ldview"},
+      {name: "ldstate", version: "dev"}
+    ])
+    script(type="module"): include:lsc index.ls
